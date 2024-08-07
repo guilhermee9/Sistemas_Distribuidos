@@ -2,12 +2,9 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <unistd.h>
-/* Gera um processo filho executando um novo programa.
-PROGRAM é o nome do programa a ser executado; ele
-será buscado no path. ARG_LIST é uma lista terminada
-em NULL de strings de caracteres a serem passados
-como a lista de argumentos do programa. Retorna o id
-do processo gerado. */
+/* Gera um processo filho executando um novo programa. PROGRAM é o nome do programa a ser executado; ele
+será buscado no path. ARG_LIST é uma lista terminada em NULL de strings de caracteres a serem passados
+como a lista de argumentos do programa. Retorna o id do processo gerado. */
 int spawn (char* program, char** arg_list)
 {
     pid_t child_pid;
@@ -34,8 +31,7 @@ int main ()
       "/",
       NULL /* A lista de argumentos deve ser terminada com NULL. */
     };
-  /* Gera um processo filho executando o comando "ls". Ignore o
-  id do processo filho retornado. */
+  /* Gera um processo filho executando o comando "ls". Ignore o id do processo filho retornado. */
   spawn ("ls", arg_list);
   printf ("o programa principal terminou\n");
   return 0;
